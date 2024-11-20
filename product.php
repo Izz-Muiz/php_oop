@@ -30,14 +30,14 @@ class CetakInfoProduct
     }
 }
 
-$product3 = new Product("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000);
+$product1 = new Product("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000);
 
-$product4 = new Product("Ultraman", "Tsuburaya Productions", "Tsuburaya Productions", 20000);
+$product2 = new Product("Ultraman", "Tsuburaya Productions", "Tsuburaya Productions", 20000);
 
-echo "Komik : " . $product3->getLabel();
+echo "Komik : " . $product1->getLabel();
 echo "<br>";
-echo "Movie : " . $product4->getLabel();
+echo "Movie : " . $product2->getLabel();
 
 echo "<br>";
 $infoProduct1 = new CetakInfoProduct();
-echo $infoProduct1->cetak($product3);
+echo $infoProduct1->cetak($product1);
