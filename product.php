@@ -23,7 +23,7 @@ class Product
 
     public function getInfoProduct()
     {
-        $str = "{$this->jenis} : {$this->judul} | {$this->getLabel()} (RM {$this->harga})";
+        $str = "{$this->judul} | {$this->getLabel()} (RM {$this->harga})";
         return $str;
     }
 }
