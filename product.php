@@ -16,7 +16,17 @@ class Product
 
     public function getLabel()
     {
-        return "$this->judul oleh $this->penulis";
+        return "$this->penulis, $this->penerbit";
+    }
+}
+
+
+class CetakInfoProduct
+{
+    public function cetak(Product $product)
+    {
+        $str = "{$product->judul} | {$product->getLabel()} (RM {$product->harga})";
+        return $str;
     }
 }
 
@@ -27,3 +37,7 @@ $product4 = new Product("Ultraman", "Tsuburaya Productions", "Tsuburaya Producti
 echo "Komik : " . $product3->getLabel();
 echo "<br>";
 echo "Movie : " . $product4->getLabel();
+
+echo "<br>";
+$infoProduct1 = new CetakInfoProduct();
+echo $infoProduct1->cetak($product3);
