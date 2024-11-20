@@ -4,9 +4,9 @@
 
 class Product
 {
-    public $judul, $penulis, $penerbit, $harga, $halaman, $waktu, $jenis;
+    public $judul, $penulis, $penerbit, $harga, $halaman, $waktu;
 
-    public function __construct($judul, $penulis, $penerbit, $harga, $halaman, $waktu, $jenis)
+    public function __construct($judul, $penulis, $penerbit, $harga, $halaman, $waktu)
     {
         $this->judul = $judul;
         $this->penulis = $penulis;
@@ -14,7 +14,6 @@ class Product
         $this->harga = $harga;
         $this->halaman = $halaman;
         $this->waktu = $waktu;
-        $this->jenis = $jenis;
     }
 
     public function getLabel()
@@ -22,14 +21,29 @@ class Product
         return "$this->penulis, $this->penerbit";
     }
 
-    public function getInfoLengkap()
+    public function getInfoProduct()
     {
         $str = "{$this->jenis} : {$this->judul} | {$this->getLabel()} (RM {$this->harga})";
-        if ($this->jenis == "Komik") {
-            $str .= " - {$this->halaman} Halaman.";
-        } else if ($this->jenis == "Game") {
-            $str .= " - {$this->waktu} Jam";
-        }
+        return $str;
+    }
+}
+
+
+class Komik extends Product
+{
+    public function getInfoProduct()
+    {
+        $str = "Komik : {$this->judul} | {$this->getLabel()} (RM {$this->harga}) - {$this->halaman} Halaman.";
+        return $str;
+    }
+}
+
+class Game extends Product
+{
+    // public $jmlHalaman;
+    public function getInfoProduct()
+    {
+        $str = "Game : {$this->judul} | {$this->getLabel()} (RM {$this->harga}) - {$this->waktu} Jam.";
         return $str;
     }
 }
@@ -44,10 +58,10 @@ class CetakInfoProduct
     }
 }
 
-$product1 = new Product("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000, 100, 0, "Komik");
+$product1 = new Komik("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000, 100, 0);
 
-$product2 = new Product("Ultraman", "Tsuburaya Productions", "Tsuburaya Productions", 20000, 0, 50, "Game");
+$product2 = new Game("Ultraman", "Tsuburaya Productions", "Tsuburaya Productions", 20000, 0, 50);
 
-echo $product1->getInfoLengkap();
+echo $product1->getInfoProduct();
 echo "<br>";
-echo $product2->getInfoLengkap();
+echo $product2->getInfoProduct();
