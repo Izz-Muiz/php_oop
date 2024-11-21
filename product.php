@@ -4,16 +4,14 @@
 
 class Product
 {
-    public $judul, $penulis, $penerbit, $harga, $halaman, $waktu;
+    public $judul, $penulis, $penerbit, $harga;
 
-    public function __construct($judul, $penulis, $penerbit, $harga, $halaman, $waktu)
+    public function __construct($judul, $penulis, $penerbit, $harga)
     {
         $this->judul = $judul;
         $this->penulis = $penulis;
         $this->penerbit = $penerbit;
         $this->harga = $harga;
-        $this->halaman = $halaman;
-        $this->waktu = $waktu;
     }
 
     public function getLabel()
@@ -31,19 +29,30 @@ class Product
 
 class Komik extends Product
 {
+    public $halaman;
+    public function __construct($judul, $penulis, $penerbit, $harga, $halaman)
+    {
+        parent::__construct($judul, $penulis, $penerbit, $harga, $halaman);
+        $this->halaman = $halaman;
+    }
     public function getInfoProduct()
     {
-        $str = "Komik : {$this->judul} | {$this->getLabel()} (RM {$this->harga}) - {$this->halaman} Halaman.";
+        $str = "Komik : " . parent::getInfoProduct() . " - {$this->halaman} Halaman.";
         return $str;
     }
 }
 
 class Game extends Product
 {
-    // public $jmlHalaman;
+    public $waktu;
+    public function __construct($judul, $penulis, $penerbit, $harga, $waktu)
+    {
+        parent::__construct($judul, $penulis, $penerbit, $harga, $waktu);
+        $this->waktu = $waktu;
+    }
     public function getInfoProduct()
     {
-        $str = "Game : {$this->judul} | {$this->getLabel()} (RM {$this->harga}) - {$this->waktu} Jam.";
+        $str = "Game : " . parent::getInfoProduct() . " - {$this->waktu} Jam.";
         return $str;
     }
 }
@@ -58,9 +67,9 @@ class CetakInfoProduct
     }
 }
 
-$product1 = new Komik("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000, 100, 0);
+$product1 = new Komik("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000, 100);
 
-$product2 = new Game("Ultraman", "Tsuburaya Productions", "Tsuburaya Productions", 20000, 0, 50);
+$product2 = new Game("Ultraman", "Tsuburaya Productions", "Tsuburaya Productions", 20000, 50);
 
 echo $product1->getInfoProduct();
 echo "<br>";
