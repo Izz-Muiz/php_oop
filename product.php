@@ -1,10 +1,10 @@
 <?php
 
-
-
 class Product
 {
-    public $judul, $penulis, $penerbit, $harga;
+    public $judul, $penulis, $penerbit; // all class can use this
+    protected $discount = 0; // only this and inheritance class can use this
+    private $harga; // onlu this class can use this
 
     public function __construct($judul, $penulis, $penerbit, $harga)
     {
@@ -12,6 +12,16 @@ class Product
         $this->penulis = $penulis;
         $this->penerbit = $penerbit;
         $this->harga = $harga;
+    }
+
+    public function setDiscount($discount)
+    {
+        $this->discount = $discount;
+    }
+
+    public function getHarga()
+    {
+        return $this->harga - ($this->harga * $this->discount / 100);
     }
 
     public function getLabel()
@@ -25,7 +35,6 @@ class Product
         return $str;
     }
 }
-
 
 class Komik extends Product
 {
@@ -58,14 +67,14 @@ class Game extends Product
 }
 
 
-class CetakInfoProduct
-{
-    public function cetak(Product $product)
-    {
-        $str = "{$product->judul} | {$product->getLabel()} (RM {$product->harga})";
-        return $str;
-    }
-}
+// class CetakInfoProduct
+// {
+//     public function cetak(Product $product)
+//     {
+//         $str = "{$product->judul} | {$product->getLabel()} (RM {$product->harga})";
+//         return $str;
+//     }
+// }
 
 $product1 = new Komik("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000, 100);
 
@@ -74,3 +83,8 @@ $product2 = new Game("Ultraman", "Tsuburaya Productions", "Tsuburaya Productions
 echo $product1->getInfoProduct();
 echo "<br>";
 echo $product2->getInfoProduct();
+
+echo "<hr>";
+
+$product2->setDiscount(50);
+echo $product2->getHarga();
