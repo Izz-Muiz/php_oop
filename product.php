@@ -4,7 +4,7 @@ class Product
 {
     private $judul, $penulis, $penerbit, $harga; // all class can use this
     protected $discount = 0; // only this and inheritance class can use this
-    // private ; // onlu this class can use this
+    // private ; // only this class can use this
 
     public function __construct($judul, $penulis, $penerbit, $harga)
     {
