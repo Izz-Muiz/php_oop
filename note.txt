@@ -55,3 +55,40 @@ Komposisi Berbanding Pewarisan: Menggalakkan prinsip reka bentuk yang memihak ke
 Piawaian: Memaksa pelaksanaan yang konsisten di semua kelas pewaris.
 Logik Berpusat: Menggabungkan kod yang dikongsi sambil menyerahkan pelaksanaan khusus kepada subkelas.
 Kerjasama Pasukan: Menjadikan proses pembangunan lebih tersusun, terutamanya dalam kerja berkumpulan.
+
+------------------------------------------------
+Interface Notes
+English Version
+Definition:
+
+An interface is a pure template for inheritance, with no implementation details.
+It defines a set of methods that must be implemented by any class that inherits it.
+Key Features:
+
+No Implementation: All methods are abstract (no body).
+Methods Only: Contains methods but no properties.
+Public Methods: All methods are implicitly public.
+Constructors: Classes that implement the interface can have their own constructors.
+Multiple Inheritance: A class can implement multiple interfaces.
+Purpose:
+
+Dependency Injection: Encourages loose coupling by allowing classes to depend on interfaces rather than concrete implementations.
+Polymorphism: Provides a foundation for achieving polymorphism.
+Standardization: Ensures all implementing classes adhere to a specific contract (method signatures).
+Malay Version
+Definisi:
+
+Antara muka adalah templat murni untuk pewarisan, tanpa perincian pelaksanaan.
+Ia menentukan satu set kaedah yang mesti dilaksanakan oleh mana-mana kelas yang mewarisinya.
+Ciri-Ciri Utama:
+
+Tiada Pelaksanaan: Semua kaedah adalah abstrak (tanpa badan).
+Hanya Kaedah: Mengandungi kaedah sahaja, tanpa properti.
+Kaedah Awam: Semua kaedah adalah secara implisit awam.
+Konstruktor: Kelas yang melaksanakan antara muka boleh mempunyai konstruktor mereka sendiri.
+Pewarisan Berganda: Satu kelas boleh melaksanakan banyak antara muka.
+Tujuan:
+
+Penyuntikan Kebergantungan: Menggalakkan hubungan longgar dengan membolehkan kelas bergantung pada antara muka, bukan pelaksanaan konkrit.
+Polimorfisme: Memberikan asas untuk mencapai polimorfisme.
+Piawaian: Memastikan semua kelas yang melaksanakan antara muka mematuhi kontrak tertentu (tandatangan kaedah).
