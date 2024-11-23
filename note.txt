@@ -16,3 +16,42 @@ Advanced Concepts
 3. Object Cloning
 4. Callbacks & Closures
 5. Namespaces & Autoloading
+
+------------------------------------------------
+Abstract Class Notes
+English Version
+Definition:
+
+An abstract class cannot be instantiated directly.
+It acts as a blueprint or framework for its subclasses.
+Contains at least one abstract method (a method declared without a body).
+Purpose:
+
+To define a common interface for its derived classes.
+Ensures all inheriting classes implement the same abstract methods.
+Useful for creating a structured, reusable base for related classes.
+Why Use Abstract Classes?
+
+Basic Concept: Provides a foundation for polymorphism.
+Composition Over Inheritance: Encourages design principles that favor object composition over strict inheritance.
+Standardization: Forces a consistent implementation across all inheriting classes.
+Centralized Logic: Consolidates shared code while leaving specific implementations to subclasses.
+Team Collaboration: Makes the development process more organized, especially in team settings.
+Malay Version
+Definisi:
+
+Kelas abstrak tidak boleh diinisialisasi secara langsung.
+Ia bertindak sebagai kerangka atau asas untuk kelas yang diwarisi.
+Mengandungi sekurang-kurangnya satu kaedah abstrak (kaedah yang diisytiharkan tanpa badan).
+Tujuan:
+
+Untuk menentukan antara muka yang sama bagi kelas-kelas yang diwarisi.
+Memastikan semua kelas pewaris melaksanakan kaedah abstrak yang sama.
+Berguna untuk mencipta asas yang tersusun dan boleh diguna semula bagi kelas-kelas berkaitan.
+Kenapa Menggunakan Kelas Abstrak?
+
+Konsep Asas: Memberikan asas untuk polimorfisme.
+Komposisi Berbanding Pewarisan: Menggalakkan prinsip reka bentuk yang memihak kepada komposisi objek daripada pewarisan ketat.
+Piawaian: Memaksa pelaksanaan yang konsisten di semua kelas pewaris.
+Logik Berpusat: Menggabungkan kod yang dikongsi sambil menyerahkan pelaksanaan khusus kepada subkelas.
+Kerjasama Pasukan: Menjadikan proses pembangunan lebih tersusun, terutamanya dalam kerja berkumpulan.
